@@ -1,0 +1,286 @@
+\documentclass[memoire, 12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[top = 1.9cm, bottom = 1.5cm, left = 1.9cm, right = 2.1cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumitem}
+%\usepackage{algorithm2e}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{multirow}
+\usepackage{multibib}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres r\'ef\'erences}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[babel=true]{csquotes}
+\setlength{\fboxrule}{0.01cm}
+\setlength{\fboxsep}{0.5cm}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{url}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{glossaries}
+%\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage[bottom]{footmisc}
+%\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{glossaries}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{minted}
+
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+
+\usepackage[utf8]{inputenc}   % encodage du fichier source
+\usepackage[T1]{fontenc}      % encodage des polices
+\usepackage[french]{babel}    % pour le français
+
+
+% Configuration des styles pour le code Python
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=python}
+
+
+
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc} 
+%\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+%Conny
+%Bjornstrup
+%\pagestyle{Conny}
+\usepackage[french]{babel}
+%\renewcommand{\footrulewidth}{3pt}
+\makeglossaries
+\title{Document_De_KALDADAK_ADAMA}
+\author{}
+\date{MOIS_ICI 2025}
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[blue!90!blue,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{logoUY1-eps-converted-to-1.pdf}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{RESUME DES EXPOSES}}}\\
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+
+
+        \vspace{0.5cm}
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{0.1cm}
+		\normalsize\textbf{Option }:\\
+		\normalsize				
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			\hspace{0.02cm} \textsl{\textbf{KALDADAK ADAMA}, 24P824}\\\\
+			\vspace{0.1cm}
+			\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+			\hspace{0.02cm} \textsl{M. Thierry MINKA}\\
+				
+               
+		\end{tabular}
+	\end{center}
+    
+	\vspace{4cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+		
+	\vspace{-1.4cm}
+	
+		
+	\vfill%\null
+	
+\end{titlepage}
+
+\newpage
+\section{L’UTILITÉ DE L’INVESTIGATION
+NUMÉRIQUE DANS LA POLICE JUDICIAIRE}
+
+Le rapport met en évidence que l’investigation numérique est devenue un outil incontournable pour la police judiciaire dans la lutte contre la criminalité moderne au Cameroun. Elle permet d’accéder à des preuves invisibles, d’identifier et de tracer les auteurs d’infractions, de reconstituer les événements et d’apporter des preuves recevables en justice. Cependant, son efficacité reste limitée par le manque de formation des enquêteurs, l’insuffisance des équipements techniques et les lacunes juridiques. Pour y remédier, la solution proposée repose sur trois axes majeurs : le renforcement des capacités humaines à travers la formation continue, la modernisation des moyens techniques par l’acquisition d’outils et de laboratoires spécialisés, et l’adaptation du cadre légal afin de concilier efficacité judiciaire et respect des droits fondamentaux. Cette approche intégrée vise à faire de l’investigation numérique un véritable pilier de la sécurité et de la souveraineté numérique du Cameroun.
+
+
+\section{PRÉSENTATION DÉTAILLÉE DU PROTOCOLE ZK-NR : RL ET
+POSITIONNEMENT DANS L’INVESTIGATION NUMÉRIQUE
+MODERNE}
+
+Cet exposé présente une étude approfondie sur le protocole ZK-NR (Zero-Knowledge Non-Repudiation) et son rôle dans l’investigation numérique moderne. Il met en évidence la nécessité d’aller au-delà du simple chiffrement pour garantir la non-répudiation, c’est-à-dire la capacité d’attribuer de manière certaine une action numérique à son auteur tout en assurant la confidentialité, l’intégrité et la valeur juridique des preuves. Le travail montre que le protocole ZK-NR, associé au cadre CLO (Cryptographic Legal Opposability), constitue une solution innovante aux limites actuelles des enquêtes numériques.
+Grâce à l’usage des preuves à divulgation nulle de connaissance et de primitives post-quantiques (comme STARKs, Dilithium, SPHINCS+), ZK-NR permet de certifier les preuves sans révéler les données sensibles, de sceller cryptographiquement la chaîne de possession et d’assurer une opposabilité juridique vérifiable devant les tribunaux. Cette approche offre ainsi une traçabilité inaltérable et une résistance aux futures menaces quantiques.
+L’exposé conclut que l’intégration de tels mécanismes cryptographiques dans l’investigation numérique représente une avancée majeure : elle renforce la crédibilité des preuves, sécurise les procédures judiciaires et rapproche la cryptographie de la sphère légale. ZK-NR et CLO ouvrent ainsi la voie à une nouvelle génération d’enquêtes numériques fondées sur la preuve vérifiable, confidentielle et juridiquement opposable.
+
+
+\section{Les dix cas Africain les plus important d'haking durant les 10 dernière sannées }
+
+Ce rapport dresse un panorama des \textbf{dix cas de cyberattaques les plus marquants survenues en Afrique entre 2015 et 2025}, en mettant en évidence les \textbf{failles systémiques} et la nécessité d’un renforcement de la \textbf{cybersécurité} et de l’\textbf{investigation numérique} sur le continent. Il montre que la numérisation rapide de l’Afrique, bien qu’elle favorise le développement économique, a accru la vulnérabilité des infrastructures critiques (banques, énergie, santé, transport, télécoms). Les attaques — telles que le \textit{ransomware sur Transnet} (Afrique du Sud), la \textit{fuite massive de données de la CNSS} (Maroc), ou l’\textit{intrusion sur Eneo} (Cameroun) — ont causé des pertes financières majeures et révélé des carences en formation, en outils de défense et en législation.
+
+Face à ces menaces, \textbf{la solution proposée} par le rapport repose sur une approche continentale intégrée :
+\begin{itemize}
+    \item \textbf{Former massivement les experts africains} en cybersécurité et investigation numérique ;
+    \item \textbf{Créer des centres régionaux CERT/CSIRT} capables de coopérer en temps réel ;
+    \item \textbf{Harmoniser les lois} à travers la Convention de Malabo pour renforcer le cadre juridique ;
+    \item \textbf{Développer un cloud souverain africain} afin d’assurer l’hébergement et la protection locale des données ;
+    \item \textbf{Renforcer la gouvernance numérique} dans les institutions publiques et les entreprises privées.
+\end{itemize}
+
+En conclusion, l’Afrique ne pourra bâtir un avenir numérique stable qu’en faisant de la \textbf{cybersécurité} et de l’\textbf{investigation numérique} des priorités stratégiques, garantissant ainsi sa \textbf{souveraineté technologique} et la \textbf{sécurité durable de son espace numérique}.
+
+
+\section{ LES TROIS MEILLEURS LOGICIELS DE
+RÉDACTION DE MÉMOIRE}
+
+Ce document présente une analyse comparative des trois meilleurs logiciels pour la rédaction de mémoires universitaires : Overleaf, Microsoft Word et Zotero. Overleaf, fondé en 2012 et désormais propriété de Springer Nature, se distingue par sa qualité typographique professionnelle, sa collaboration en ligne et son intégration LaTeX, bien qu’il exige une certaine maîtrise technique. Word reste l’outil le plus accessible et universel, apprécié pour sa compatibilité et ses fonctions de mise en forme, mais limité en gestion bibliographique. Zotero, gestionnaire open-source, complète ces deux outils en offrant une gestion rigoureuse, automatique et gratuite des références bibliographiques. L’étude recommande l’association Overleaf + Zotero pour un équilibre optimal entre rigueur scientifique et efficacité, tout en rappelant que la maîtrise des outils doit toujours servir la qualité intellectuelle du travail.
+
+
+\section{Points sur les algorithmes de reconnaissance
+faciale}
+
+La reconnaissance faciale est une technologie d’intelligence artificielle utilisée pour identifier ou vérifier une personne à partir de ses traits du visage. Elle constitue un outil précieux pour l’investigation numérique et les enquêtes judiciaires, car elle permet de traiter rapidement de grandes quantités d’images et de vidéos. Toutefois, malgré sa rapidité et sa précision, elle présente des limites liées à la fiabilité des algorithmes, à la protection des données biométriques et aux risques d’atteinte à la vie privée. Pour un usage sûr et efficace, il est recommandé de mettre en place un cadre juridique clair, de renforcer la sécurité des systèmes (anti-usurpation, chiffrement, tests réguliers) et de garantir une supervision humaine et éthique. Bien encadrée, la reconnaissance faciale peut devenir un atout majeur pour la cybersécurité et la justice au Cameroun.
+
+
+
+\section{DeepFake vocal}
+
+Les deepfakes audios, produits par l’intelligence artificielle, ont des usages à la fois légitimes et malveillants. Ils peuvent servir à aider les personnes privées de parole, au doublage audiovisuel ou à la conservation de voix, mais aussi être utilisés pour des fraudes, de l’usurpation d’identité ou la falsification de preuves. Ces manipulations menacent la confidentialité, la fiabilité et l’opposabilité des enregistrements dans les enquêtes numériques. Le cas de MINIMAX Audio illustre ce double visage : outil innovant pour l’éducation et le divertissement, il présente aussi des risques sécuritaires et éthiques. Pour y faire face, il est nécessaire de développer des outils de détection, de renforcer la réglementation et la sensibilisation, et de promouvoir une éthique de l’IA. Enfin, la mise en place d’une boîte à outils pour les investigateurs numériques est essentielle afin d’améliorer la détection, l’analyse et la fiabilité des preuves audio.
+
+
+\section{Simulation d'une serie de messages sur
+WhatsApp entre un homme et sa maitresse}
+
+Ce devoir met en évidence, à travers une simulation d’échanges WhatsApp falsifiés, la facilité avec laquelle il est possible de créer de fausses preuves numériques à l’aide d’outils tels que Chatsmock et Adobe Photoshop. Dans le scénario étudié, une conversation simulant une relation entre un enseignant et une étudiante a été fabriquée pour illustrer les risques liés à la manipulation de données numériques. L’expérience montre que, bien que ces outils soient simples et efficaces, ils compromettent la fiabilité des captures d’écran utilisées comme preuves judiciaires. Leur usage rend la distinction entre données authentiques et falsifiées difficile, augmentant ainsi le risque de fraude et de manipulation. Le rapport recommande donc de renforcer les méthodes de vérification technique (analyse des métadonnées, signatures numériques), de former les acteurs judiciaires à détecter les falsifications, et de privilégier les données brutes issues directement des appareils ou serveurs. En conclusion, cette étude souligne la nécessité d’un encadrement rigoureux et d’une vigilance accrue dans l’investigation numérique afin de garantir la fiabilité et l’intégrité des preuves dans un contexte où la falsification devient de plus en plus accessible.
+
+
+\section{CONCEPTION ET ANALYSE D’UN FAUX PROFIL
+TIKTOK : CHOIX D’UNE NICHE DANS LE CADRE
+D’UNE INVESTIGATION NUMÉRIQUE}
+Ce rapport présente une investigation numérique menée dans un cadre pédagogique à travers la création d’un faux profil TikTok consacré à la cybersécurité. L’objectif était d’analyser les réactions des utilisateurs, de comprendre les mécanismes de viralité et de sensibiliser à la sécurité numérique tout en respectant les principes éthiques. À l’aide d’outils tels que ChatGPT, Canva, Temp Mail et les statistiques internes de TikTok, l’équipe a conçu un contenu éducatif et attractif, abordant des thèmes comme la protection des mots de passe, les arnaques en ligne et la gestion des données personnelles. Les résultats ont montré un bon engagement du public et un intérêt réel pour la thématique. Toutefois, le projet souligne aussi les risques éthiques liés à l’usage de faux profils, même à des fins éducatives, et la nécessité d’un cadre clair pour éviter toute dérive. En conclusion, cette expérience démontre que les réseaux sociaux peuvent être des outils puissants de sensibilisation à la cybersécurité, à condition que leur utilisation reste responsable, encadrée et conforme aux valeurs éthiques et légales.
+
+
+
+\end{document}
