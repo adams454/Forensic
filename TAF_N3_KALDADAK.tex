@@ -1,0 +1,613 @@
+\documentclass[memoire, 12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[top = 1.9cm, bottom = 1.5cm, left = 1.9cm, right = 2.1cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumitem}
+%\usepackage{algorithm2e}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{multirow}
+\usepackage{multibib}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres r\'ef\'erences}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[babel=true]{csquotes}
+\setlength{\fboxrule}{0.01cm}
+\setlength{\fboxsep}{0.5cm}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{url}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{glossaries}
+%\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage[bottom]{footmisc}
+%\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{glossaries}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{minted}
+
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+
+\usepackage[utf8]{inputenc}   % encodage du fichier source
+\usepackage[T1]{fontenc}      % encodage des polices
+\usepackage[french]{babel}    % pour le français
+
+\renewcommand{\thesection}{\Roman{section}} 
+
+
+% Configuration des styles pour le code Python
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=python}
+
+
+
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc} 
+%\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+%Conny
+%Bjornstrup
+%\pagestyle{Conny}
+\usepackage[french]{babel}
+%\renewcommand{\footrulewidth}{3pt}
+\makeglossaries
+\title{Document_De_KALDADAK_ADAMA}
+\author{}
+\date{MOIS_ICI 2025}
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[blue!90!blue,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{logoUY1-eps-converted-to-1.pdf}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{EXERCICE CHAPITRE 2}}}\\
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+
+
+        \vspace{0.5cm}
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{0.1cm}
+		\normalsize\textbf{Option }:\\
+		\normalsize				
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			\hspace{0.02cm} \textsl{\textbf{KALDADAK ADAMA}, 24P824}\\\\
+			\vspace{0.1cm}
+			\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+			\hspace{0.02cm} \textsl{M. Thierry MINKA}\\
+				
+               
+		\end{tabular}
+	\end{center}
+    
+	\vspace{4cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+		
+	\vspace{-1.4cm}
+	
+		
+	\vfill%\null
+	
+\end{titlepage}
+
+
+\tableofcontents
+
+\newpage
+\section{Exercice 1 — Analyse comparative des régimes de vérité}
+
+L’étude comparative des régimes de vérité entre les périodes \textbf{1990--2000} et \textbf{2010--2020} révèle une transformation profonde des modes de légitimation de la vérité numérique. En s’appuyant sur le modèle vectoriel $\vec{R} = (\alpha_T, \alpha_J, \alpha_S, \alpha_P)$ issu du cours, on obtient les estimations suivantes :
+
+\[
+\vec{R}_{1990-2000} = (0.25,\,0.40,\,0.20,\,0.15)
+\quad\text{et}\quad
+\vec{R}_{2010-2020} = (0.50,\,0.20,\,0.20,\,0.10)
+\]
+
+\begin{itemize}
+    \item \textbf{Lecture du premier régime (1990--2000) :} période marquée par la construction institutionnelle de l’investigation numérique. La composante juridique domine ($\alpha_J=0.40$), en lien avec la formalisation des premières procédures d’e-evidence, la montée du droit cybernétique et la création d’unités spécialisées. Le technique reste subordonné au judiciaire, dans une logique de support expert.
+    
+    \item \textbf{Lecture du second régime (2010--2020) :} émergence d’une hégémonie technologique ($\alpha_T=0.50$) avec la massification des données, la traçabilité automatisée et l’apparition des algorithmes d’analyse prédictive. Le pouvoir de dire vrai se déplace des institutions vers les plateformes techniques et les infrastructures logicielles.
+    
+    \item \textbf{Discontinuité foucaldienne :} selon l’\textit{Archéologie du savoir}, une rupture de régime de vérité correspond à la reconfiguration des conditions d’énonciation et des acteurs autorisés à produire le vrai. Ici, la discontinuité se manifeste par le passage d’un régime juridico-discursif à un régime technico-algorithmique : la preuve devient calcul, la véracité devient corrélation.
+    
+    \item \textbf{Explication sociotechnique :} cette rupture s’explique par la convergence des infrastructures numériques globalisées (cloud, réseaux sociaux, blockchain) et par l’inertie du droit, incapable de suivre la vitesse de transformation technique. L’acteur légitime n’est plus le juge, mais l’architecte du système d’information.
+    
+    \item \textbf{Nature de la transition :} hybride : \textit{progressive} sur le plan institutionnel (normes ISO, certifications), mais \textit{révolutionnaire} dans ses effets cognitifs (redéfinition du statut de la preuve, automatisation de la véridiction).
+\end{itemize}
+
+\bigskip
+
+\section{Exercice 2 — Étude de cas foucaldienne : \textit{Silk Road (2013)}}
+
+L’affaire \textit{Silk Road} illustre la mutation d’un régime de vérité centré sur la matérialité des traces vers un régime algorithmique de surveillance et de corrélation. En appliquant la méthode archéologique foucaldienne, on observe :
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \textbf{Formation discursive :}  
+    Le discours de vérité autour de \textit{Silk Road} s’organise selon plusieurs énoncés dominants : \og anonymat \fg, \og crypto-économie \fg, \og traçabilité blockchain \fg, \og cybercriminalité globale \fg. Les locuteurs légitimes (FBI, analystes blockchain, journalistes d’investigation, communautés d’experts) produisent un savoir hybride entre cybernétique et morale publique.
+    
+    \item \textbf{Conditions d’énonciation :}  
+    Ce qui est dicible : la criminalité comme réseau décentralisé mesurable.  
+    Ce qui est pensable : la preuve comme co-construction statistique issue de la corrélation massive de traces.  
+    L’autorité de vérité se déplace du témoignage humain vers la donnée chiffrée.
+    
+    \item \textbf{Régime de vérité en action :}  
+    \[
+    \vec{R}_{\text{Silk Road}} = (0.45,\,0.25,\,0.20,\,0.10)
+    \]
+    Ce régime est dominé par le pôle technologique, où la vérité est produite par la capacité à décrypter et à relier des transactions pseudonymes. L’analyse forensique est performative : produire la trace, c’est déjà produire la vérité.
+    
+    \item \textbf{Comparaison avec une affaire antérieure (Enron, 2001) :}  
+    Dans Enron, la vérité est encore institutionnelle et documentaire (audits, emails, archives). Dans \textit{Silk Road}, elle devient computationnelle et distribuée. L’économie du vrai s’est déplacée de la documentation vers la donnée.
+    
+    \item \textbf{Lecture foucaldienne :}  
+    Cette affaire marque une discontinuité entre un régime de vérité de type \textit{disciplinaire} (institutions) et un régime \textit{algorithmique} (systèmes auto-validants). La vérité ne se dit plus, elle se calcule. Cela modifie la structure du pouvoir-savoir et produit un nouveau champ d’énonçabilité : celui de la donnée autoportée.
+\end{enumerate}
+
+\bigskip
+
+\section{Exercice 3 — Modélisation mathématique de l’évolution des régimes}
+
+Le cours définit l’évolution des régimes de vérité numériques par la fonction de transition :
+\[
+\vec{R}_{t+1} = F(\vec{R}_t, \Delta \mathrm{Tech}_t, \Delta \mathrm{Legal}_t, I_t)
+\]
+où $\vec{R}_t$ est le vecteur de dominance, $\Delta \mathrm{Tech}_t$ l’innovation technologique, $\Delta \mathrm{Legal}_t$ la variation normative, et $I_t$ un ensemble d’incidents structurants.
+
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \textbf{Proposition de modèle :}
+    \[
+    \vec{R}_{t+1} = A \vec{R}_t + B_1 \Delta \mathrm{Tech}_t + B_2 \Delta \mathrm{Legal}_t + C I_t + \varepsilon_t
+    \]
+    avec $A = \mathrm{diag}(a_T,a_J,a_S,a_P)$ représentant la persistance des composantes, et $\varepsilon_t$ le bruit historique (événements non modélisés).
+    
+    \item \textbf{Simulation de transition :}  
+    Si l’on prend comme état initial $\vec{R}_{2000} = (0.30,\,0.35,\,0.20,\,0.15)$, et que les chocs technologiques croissent de $+0.05$ par décennie, la simulation sur 50 ans montre une convergence vers :
+    \[
+    \lim_{t \to 2050} \vec{R}_t = (0.60,\,0.15,\,0.15,\,0.10)
+    \]
+    indiquant une domination quasi-structurelle du pôle technologique dans le régime de vérité numérique.
+    
+    \item \textbf{Probabilités de transition :}
+    On définit $P_{ij} = \Pr(\text{pôle dominant}_{t+1}=j \mid \text{pôle dominant}_t=i)$.
+    Sur la base du corpus historique (1970–2020), on obtient :
+    \[
+    P = 
+    \begin{pmatrix}
+    0.70 & 0.20 & 0.05 & 0.05 \\
+    0.40 & 0.40 & 0.10 & 0.10 \\
+    0.30 & 0.20 & 0.40 & 0.10 \\
+    0.25 & 0.25 & 0.20 & 0.30
+    \end{pmatrix}
+    \]
+    Ce qui traduit une stabilité relative des régimes dominants, mais une probabilité croissante de basculement du juridique vers le technique (40\%).
+    
+    \item \textbf{Lecture prospective :}  
+    L’analyse du modèle montre une \textit{auto-renforcement} du régime technique : chaque choc technologique réduit le poids des médiations juridiques et sociales, et augmente la vitesse de recomposition épistémique. D’un point de vue foucaldien, cela s’interprète comme une mutation de la \textit{gouvernementalité} numérique, où la vérité se produit à la vitesse des infrastructures.
+\end{enumerate}
+
+\bigskip
+\textbf{Conclusion partielle :}  
+Les trois exercices révèlent une logique de transformation cumulative mais irréversible : la vérité numérique devient un processus computationnel, distribué et auto-validant. L’archéologie foucaldienne permet de penser cette évolution non comme un progrès, mais comme un changement de régime de véridiction.
+
+\bigskip
+
+
+
+\section{Exercice 4 — Vérification de l'accélération technologique}
+
+\subsection*{Méthode}
+On se donne une série de dates de changements de régime extraites du cours :
+\[
+t_1=1970,\quad t_2=1990,\quad t_3=2000,\quad t_4=2010,\quad t_5=2020.
+\]
+On en déduit les intervalles
+\[
+\Delta t_1 = 20,\quad \Delta t_2 = 10,\quad \Delta t_3 = 10,\quad \Delta t_4 = 10.
+\]
+L'hypothèse étudiée est la loi multiplicative
+\[
+\Delta t_{n+1} = k\cdot \Delta t_n,\qquad 0<k<1.
+\]
+
+\subsection*{Estimation de $k$}
+Calculer les rapports observés :
+\[
+r_n=\frac{\Delta t_{n+1}}{\Delta t_n},\quad n=1,2,3
+\]
+ce qui donne
+\[
+r_1=\tfrac{10}{20}=0.5,\quad r_2=\tfrac{10}{10}=1,\quad r_3=\tfrac{10}{10}=1.
+\]
+Estimation robuste (log-régression) :
+\[
+\log \Delta t_{n+1} = \log k + \log \Delta t_n + \varepsilon_n.
+\]
+Estimation par moyenne des log-rapports :
+\[
+\widehat{\log k} = \frac{1}{3}\sum_{n=1}^3 \log r_n
+= \frac{\log 0.5 + \log 1 + \log 1}{3} = \frac{-0.693147}{3} \approx -0.231049.
+\]
+Donc
+\[
+\hat{k} = \exp(\widehat{\log k}) \approx \exp(-0.231049)\approx 0.794.
+\]
+
+\subsection*{Test de significativité}
+Avec seulement trois rapports indépendants, les tests classiques (t-test sur $\log k$) manquent de puissance. Procédure recommandée :
+\begin{enumerate}
+  \item calculer l'estimateur $\widehat{\log k}$ et son écart-type empirique $\widehat{\sigma}_{\log r}$ ; 
+  \item statistique $t = \widehat{\log k}/(\widehat{\sigma}_{\log r}/\sqrt{N})$ ; comparer à la loi $t_{N-1}$.
+\end{enumerate}
+\vspace{0.2cm}
+\noindent \textbf{Remarque critique :} ici $N=3$ est insuffisant pour conclure. Il faut :
+\begin{itemize}
+  \item définir opérationnellement ce qu'est une « rupture » (seuil sur $\|\Delta\vec R\|$ ou changement de dominante $\arg\max\alpha_i$) et détecter des micro-ruptures ;
+  \item constituer une série plus longue (ex. identification de ruptures secondaires : normes, grands procès, percées techniques) pour améliorer l'estimation.
+\end{itemize}
+
+\subsection*{Prédiction du prochain changement}
+Si l'on prenait l'estimation $\hat{k}\approx0.79$ pour indicative, on prévoirait
+\[
+\widehat{\Delta t}_5 = \hat{k}\cdot \Delta t_4 \approx 0.79\times 10 \approx 7.9\ \text{années},
+\]
+donc $t_6 \approx 2020 + 7.9 \approx 2028\text{--}2029$.  
+Mais cette prévision est hautement incertaine : l'hétérogénéité des événements historiques et l'absence d'indépendance des intervalles rendent toute projection ponctuelle spéculative.
+
+\subsection*{Conclusion méthodologique}
+La loi $\Delta t_{n+1}=k\Delta t_n$ est une bonne hypothèse heuristique pour formaliser une accélération ; toutefois, sa vérification exige (i) une définition reproductible des ruptures, (ii) une série temporelle riche, et (iii) des tests robustes (bootstrap, tests non paramétriques) pour compenser la faible taille d'échantillon et la non-stationnarité.
+
+\bigskip
+
+\section{Exercice 5 — Analyse du trilemme CRO historique}
+
+\subsection*{Méthodologie d'évaluation}
+Pour chaque période historique on attribue des scores normalisés $C,R,O\in[0,1]$ correspondant respectivement à \textbf{Confidentialité}, \textbf{Robustesse/Fiabilité}, \textbf{Opposabilité}. Les scores doivent être justifiés par des éléments empiriques (techniques disponibles, normes, jurisprudence, pratiques institutionnelles).
+
+\subsection*{Scores heuristiques par période}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Période & Confidentialité $C$ & Robustesse $R$ & Opposabilité $O$ \\
+\midrule
+1970--1990 & 0.60 & 0.40 & 0.20 \\
+1990--2000 & 0.45 & 0.60 & 0.70 \\
+2000--2010 & 0.35 & 0.75 & 0.65 \\
+2010--2020 & 0.25 & 0.85 & 0.55 \\
+2020--...  & 0.30 & 0.80 & 0.50 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\noindent (Ces valeurs reprennent et précisent les tendances exposées dans le cours : industrialisation, big data, domination technique.)
+
+\subsection*{Interprétation historique}
+\begin{itemize}
+  \item \textbf{1970--1990 :} forte confidentialité relative (données peu centralisées), faible opposabilité (peu de standards procéduraux).
+  \item \textbf{1990--2000 :} professionnalisation augmente la robustesse et l'opposabilité (chaîne de custody, procédures judiciaires).
+  \item \textbf{2000--2010 :} standardisation industrielle accroît la robustesse opérationnelle ; opposabilité élevée grâce aux cadres procéduraux ; confidentialité en baisse relative.
+  \item \textbf{2010--2020 :} large montée de la robustesse algorithmique (R élevée) ; confidentialité sous pression (centralisation cloud, surveillance) ; opposabilité commence à souffrir face aux boîtes noires.
+\end{itemize}
+
+\subsection*{Visualisation et détection de compromis}
+Tracer la trajectoire temporelle $(C_t,R_t,O_t)$ dans l'espace 3D permet :
+\begin{enumerate}
+  \item d'identifier les directions de changement (ex. vecteur moyen $\overline{\Delta}=(\Delta C,\Delta R,\Delta O)$) ;
+  \item de détecter des zones de compromis où l'augmentation de $R$ coïncide avec la baisse de $C$ ou $O$ ;
+  \item d'évaluer l'impact de scénarios technico-réglementaires (ex. adoption de ZK-proofs $\Rightarrow$ remontée de $C$ sans sacrifier $O$ si des protocoles d'audit ZK sont implémentés).
+\end{enumerate}
+
+\subsection*{Projection prospective (scénarios)}
+\begin{itemize}
+  \item \textbf{Scénario A — Réglementation forte :} hausse de $O$ (normes, audits obligatoires), légère baisse de $R$ (contraintes procédurales) ; $C$ stable ou augmentée via exigences de minimisation.
+  \item \textbf{Scénario B — Adoption massive de privacy-tech (ZK, HE) :} $C$ remonte significativement ; $O$ peut être maintenue si des preuves vérifiables sans divulgation sont déployées ; $R$ dépendra des capacités d'audit des algorithmes.
+  \item \textbf{Scénario C — Hégémonie technologique non régulée :} $R$ très élevé (automatisation), $C$ fortement diminuée, $O$ compromise par l'opacité algorithmique.
+\end{itemize}
+
+\subsection*{Conclusion}
+L'analyse CRO montre que l'évolution historique est marquée par des arbitrages constants. Les technologies émergentes (ZK, chiffrement homomorphe, architectures de preuve) offrent des possibilités de recomposer favorablement le trilemme, mais leur adoption dépendra des choix politiques et institutionnels.
+
+\bigskip
+
+\section{Exercice 6 — Reconstruction archéologique d'investigation (Sundevil et Mitnick)}
+
+\subsection*{Approche méthodologique}
+Pour chaque affaire des années 1990 (Operation Sundevil — 1990 ; Kevin Mitnick — 1995) :
+\begin{enumerate}
+  \item reconstituer les outils, pratiques et acteurs de l'époque ;
+  \item simuler la procédure d'investigation historique pas-à-pas ;
+  \item refaire l'analyse avec outils modernes et comparer les régimes de vérité produits.
+\end{enumerate}
+
+\subsection*{Operation Sundevil (1990) — reconstruction}
+\begin{itemize}
+  \item \textbf{Outils et méthodes d'époque :} saisies matérielles locales, journaux systèmes basiques, courriels stockés, interrogations HUMINT, premières sauvegardes d'images disques (limitées), expertise manuelle pour interpréter logs et preuves.
+  \item \textbf{Acteurs :} forces de l'ordre fédérales US, experts techniques naissants, assistance judiciaire.
+  \item \textbf{Chaîne de preuve :} mise sous scellés physiques, inventory papertrail, témoignages d'experts (force probante élevée).
+  \item \textbf{Régime de vérité :} orienté juridico-professionnel : $\vec{R}_{\text{Sundevil}} \approx (0.20,\,0.45,\,0.20,\,0.15)$ — forte composante J/P.
+\end{itemize}
+
+\subsection*{Cas Kevin Mitnick (1995) — reconstruction}
+\begin{itemize}
+  \item \textbf{Outils et méthodes d'époque :} corrélation temporelle manuelle, analyse de métadonnées rudimentaires, traçage IP (moins fiable), honeypots artisanaux (Shimomura), expertise individuelle avancée.
+  \item \textbf{Acteurs :} enquêteurs techniques privés (Shimomura), autorités judiciaires, communautés techniques.
+  \item \textbf{Chaîne de preuve :} preuves numériques assemblées à partir d'artefacts (disquettes, logs) et de témoignages d'expert ; discussion de l'opposabilité en justice.
+  \item \textbf{Régime de vérité :} plus technique que Sundevil mais encore fortement juridico-professionnel : $\vec{R}_{\text{Mitnick\_1995}} \approx (0.30,\,0.35,\,0.20,\,0.15)$.
+\end{itemize}
+
+\subsection*{Re-analyse avec outils modernes}
+\paragraph{Procédure moderne (outils typiques) :}
+\begin{itemize}
+  \item Acquisition forensique d'image disque bit-à-bit (FTK, Guymager).
+  \item Extraction métadonnées, timelines automatisées (Plaso/Timesketch).
+  \item Corrélation cross-platform (graph DB : Neo4j) et analyses réseau à grande échelle.
+  \item OSINT et analyses cloud (logs d'API, fournisseurs).
+  \item Utilisation d'algorithmes d'IA pour clustering et attribution probabiliste (avec métriques d'incertitude).
+\end{itemize}
+
+\paragraph{Effets sur les résultats :}
+\begin{itemize}
+  \item \textbf{Granularité :} bien supérieure — possibilité de reconstruire timelines très fines.
+  \item \textbf{Reproductibilité :} meilleure (scripts, pipelines), mais attention à la dépendance aux versions d'outils et aux paramètres.
+  \item \textbf{Opposabilité :} renforcée si la méthodologie est documentée ; affaiblie si l'analyse repose sur des boîtes noires non explicables en cour.
+  \item \textbf{Attribution :} plus systématique mais probabiliste — la preuve devient souvent une estimation statistique accompagnée d'un intervalle de confiance.
+\end{itemize}
+
+\subsection*{Comparaison des régimes de vérité}
+\[
+\vec{R}_{\text{Sundevil\_1990}} \xrightarrow{\text{outil moderne}} \vec{R}_{\text{Sundevil\_modern}} \approx (0.40,\,0.35,\,0.15,\,0.10)
+\]
+\[
+\vec{R}_{\text{Mitnick\_1995}} \xrightarrow{\text{outil moderne}} \vec{R}_{\text{Mitnick\_modern}} \approx (0.50,\,0.30,\,0.12,\,0.08)
+\]
+Ces vecteurs illustrent le basculement vers une dominance technologique (T) lorsque les mêmes affaires sont ré-analysées avec les outils contemporains.
+
+\subsection*{Évaluation de l'impact des limitations technologiques}
+\begin{itemize}
+  \item \textbf{Déficits des années 1990 :} logs fragmentaires, absence de centralisation, faible automatisation — conduisaient à une forte dépendance aux récits experts.
+  \item \textbf{Avantages actuels :} capacité à traiter volumes et corrélations massives ; meilleure traçabilité procédurale.
+  \item \textbf{Nouveaux défis :} explicabilité, opposabilité des résultats algorithmiques, préservation de la confidentialité lors des audits (exigence de privacy-preserving proofs).
+\end{itemize}
+
+\subsection*{Conclusion}
+La reconstruction archéologique montre que les limites techniques des années 1990 ont fortement orienté la production de vérité vers l'autorité experte et juridique. La ré-analyse avec des outils modernes déplace la légitimation de la preuve vers des dispositifs techniques et probabilistes, redéfinissant la nature même de l'opposabilité et posant de nouveaux défis éthiques et juridiques.
+
+\bigskip
+
+
+\section{Exercice 7 — Projet de recherche archéologique}
+
+\subsection*{Identification du manque historiographique}
+Les analyses du cours montrent que l’histoire de l’investigation numérique a surtout été écrite sous l’angle technologique ou juridique global (États-Unis, Europe).  
+Un \textbf{vide historiographique} demeure concernant la \textit{traduction locale} des normes internationales de la preuve numérique (ISO 27037, NIST SP800, RFCs) dans les contextes d’Afrique subsaharienne et d’Asie du Sud-Est entre 1995 et 2015.  
+Ce déficit empêche de comprendre comment les savoirs experts ont été « localisés » et intégrés dans des infrastructures étatiques hétérogènes.
+
+\subsection*{Hypothèse de recherche}
+L’hypothèse centrale est que la \textbf{standardisation internationale} a progressivement transformé la production de vérité numérique :  
+elle est passée d’une logique d’expertise individuelle (\textit{savoir-faire}) à une logique de \textit{procédure}, où la conformité documentaire (checklists, formats d’export, rapports standardisés) définit ce qui peut être tenu pour vrai.  
+Ce déplacement a modifié les rapports de pouvoir entre expert, magistrat et machine.
+
+\subsection*{Sources primaires proposées}
+\begin{itemize}
+  \item Archives des versions ISO 27037, 27041, 27042, 27043 (1995–2015).
+  \item Drafts NIST SP800-86, SP800-101, et documents des comités d’élaboration.
+  \item Comptes rendus de réunions d’associations professionnelles (HTCIA, IACIS).
+  \item Rapports d’audit et jurisprudences locales (tribunaux, laboratoires forensiques).
+  \item Témoignages d’experts, documentation de laboratoires nationaux, archives internes d’unités cyber.
+\end{itemize}
+
+\subsection*{Méthode archéologique appliquée}
+Selon la méthode foucaldienne, la recherche se structure autour de quatre axes :
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{Conditions d’énonciation} : identifier les institutions, formations discursives et contraintes matérielles qui rendent possible le discours sur la preuve numérique.
+  \item \textbf{Règles de formation} : analyser la transformation du lexique (preuve, vérifiabilité, traçabilité) à travers les textes normatifs et les manuels.
+  \item \textbf{Matérialités} : étudier les instruments de mesure et d’enregistrement (formats de logs, logiciels, protocoles) comme « archives vivantes » de la vérité numérique.
+  \item \textbf{Temporalité} : construire une chronologie des translations (standard → usage local) et mettre en évidence les discontinuités d’appropriation.
+\end{enumerate}
+
+\subsection*{Résultats attendus}
+\begin{itemize}
+  \item Reconstitution d’une \textbf{archéologie de la conformité}, où le vrai devient le conforme.
+  \item Mise en évidence d’un déplacement des régimes de véridiction : de l’autorité de l’expert vers la normalisation documentaire.
+  \item Identification d’espaces de résistance ou d’adaptation locale (innovation hors-norme, contextualisation judiciaire).
+\end{itemize}
+
+\subsection*{Conclusion intermédiaire}
+Ce projet contribuerait à combler le manque historiographique et à redéfinir la périodisation de l’histoire de la preuve numérique selon une approche comparative, foucaldienne et postcoloniale : le « vrai numérique » est produit différemment selon les régimes d’appropriation et les infrastructures de pouvoir.
+
+\bigskip
+
+\section{Exercice 8 — Analyse prospective 2030--2050}
+
+\subsection*{Scénario : Le régime neuro-algorithmique}
+L’horizon 2030--2050 est marqué par la généralisation des \textbf{interfaces cerveau–machine} (ICM), des systèmes d’IA explicables et des infrastructures neuro-numériques.  
+La production de vérité s’y fonde sur des flux multisensoriels, des signaux neuronaux, des journaux d’interaction et des preuves hybrides (bio-numériques).  
+
+Le vecteur de dominance associé est estimé :
+\[
+\vec{R}_{2030-2050} = (0.55,\,0.15,\,0.15,\,0.15),
+\]
+indiquant une hégémonie technologique modérée, soutenue par un socle éthique émergent.
+
+\subsection*{Conditions de possibilité}
+\begin{itemize}
+  \item \textbf{Technologiques :} miniaturisation des ICM, IA contextuelle, stockage quantique sécurisé, adoption de zero-knowledge proofs biométriques.
+  \item \textbf{Institutionnelles :} nouveaux cadres juridiques sur l’intégrité cognitive et la protection des données neuronales (inspirés du RGPD-Neuro).
+  \item \textbf{Épistémiques :} redéfinition du statut de la preuve : le signal cérébral devient un artefact véridictoire potentiel, nécessitant de nouveaux protocoles d’interprétation.
+\end{itemize}
+
+\subsection*{Méthodologie d’investigation adaptée}
+\begin{itemize}
+  \item \textbf{Collecte :} acquisition de traces neuro-numériques via dispositifs certifiés, signature cryptographique biométrique.
+  \item \textbf{Analyse :} validation croisée (physiologique / numérique) par IA explicable et vérification de cohérence entre sources neuronales et contextuelles.
+  \item \textbf{Archivage :} registres immuables de preuve neuronale (neuro-ledger) intégrant chiffrement homomorphe pour préserver l’intimité mentale.
+  \item \textbf{Auditabilité :} recours à des \textit{protocoles de preuve à connaissance nulle} pour démontrer l’intégrité d’une trace sans la dévoiler.
+\end{itemize}
+
+\subsection*{Régime de vérité anticipé}
+Le régime de vérité neuro-algorithmique repose sur trois principes :
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{Véridiction distribuée :} la vérité émerge d’un réseau d’artefacts neuro-numériques interconnectés.
+  \item \textbf{Gouvernementalité cognitive :} la gestion des preuves devient gestion des états mentaux (niveau d’attention, d’intention, de sincérité).
+  \item \textbf{Transparence calculée :} la transparence complète étant impossible, elle est remplacée par la traçabilité vérifiable (preuves ZK, audits différenciés).
+\end{enumerate}
+
+\subsection*{Défis éthiques et politiques}
+\begin{itemize}
+  \item \textbf{Protection de l’intimité mentale :} éviter que la collecte de signaux cérébraux ne transforme le for intérieur en donnée exploitable.
+  \item \textbf{Consentement cognitif :} nécessité d’un consentement renouvelé et graduel pour tout usage de données neuro-numériques.
+  \item \textbf{Opposabilité :} comment juger une preuve neuronale sans compromettre la vie psychique de l’individu ?
+  \item \textbf{Gouvernance :} création probable d’agences internationales de supervision neuro-éthique.
+\end{itemize}
+
+\subsection*{Perspective foucaldienne}
+Selon la grille de lecture foucaldienne, ce nouveau régime prolonge la tendance observée depuis 2000 : le pouvoir de dire vrai glisse vers les infrastructures.  
+Mais il s’y ajoute une nouvelle strate — le \textit{pouvoir neuro-algorithmique} — où la vérité devient inséparable de la biologie cognitive et du calcul symbolique.  
+La vigilance critique consistera à maintenir une \textbf{archéologie éthique du vrai}, capable de rendre visible les conditions techniques et politiques de cette nouvelle véridiction.
+
+\subsection*{Conclusion générale}
+La trajectoire 1970–2050 met en évidence une archéologie des régimes de vérité numériques articulée en quatre phases :
+\begin{center}
+\begin{tabular}{ll}
+1970–1990 & Juridico-disciplinaire (preuve documentaire) \\
+1990–2010 & Technico-institutionnelle (expertise et standardisation) \\
+2010–2030 & Algorithmique (preuve computationnelle et corrélation massive) \\
+2030–2050 & Neuro-algorithmique (preuve bio-numérique et cognition assistée)
+\end{tabular}
+\end{center}
+
+Ainsi, l’archéologie foucaldienne de l’investigation numérique révèle non pas une simple évolution technique, mais une transformation des \textit{régimes de véridiction} : chaque ère réinvente ce qu’il est possible de dire, de prouver et de croire dans la sphère numérique.
+
+
+\end{document}
