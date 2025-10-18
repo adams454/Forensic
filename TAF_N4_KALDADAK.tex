@@ -1,0 +1,452 @@
+\documentclass[memoire, 12pt]{report}
+
+% === Encodage & langue ===
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% === Mise en page ===
+\usepackage[top=1.9cm, bottom=1.5cm, left=1.9cm, right=2.1cm]{geometry}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{float}
+\usepackage[bottom]{footmisc}
+\usepackage[section]{placeins}
+
+% === Mathématiques ===
+\usepackage{amsmath, amssymb, amsfonts}
+
+% === Tableaux et mise en forme ===
+\usepackage{array, tabularx, longtable, multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% === Graphiques et dessins ===
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[export]{adjustbox}
+
+% === Références et bibliographie ===
+\usepackage{multibib}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres références}
+\usepackage[babel=true]{csquotes}
+\usepackage{url}
+\usepackage{pdfpages}
+
+% === Algorithmes ===
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+% Si tu préfères algorithm2e, commente les deux lignes ci-dessus et décommente celle-ci :
+\usepackage[ruled,vlined,french,onelanguage]{algorithm2e}
+
+% === Autres utilitaires ===
+\usepackage{lmodern}
+\usepackage{rotating}
+\usepackage{lipsum}
+\usepackage{minted}   % pour le code source coloré
+\usepackage{listings}
+\usepackage[normalem]{ulem} % pour \uline etc.
+\useunder{\uline}{\ul}{}
+
+% === Glossaires ===
+\usepackage{glossaries}
+
+% === Liens hypertextes ===
+\usepackage{hyperref}
+
+
+% Augmente l'espacement vertical entre les entrées
+\setlength{\cftbeforesecskip}{8pt}   % espace avant chaque section
+\setlength{\cftbeforesubsecskip}{4pt} % espace avant chaque sous-section
+% Met en gras les sections principales dans la table des matières
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+
+% Optionnel : augmente l'espacement entre les points de la ligne
+\renewcommand{\cftdotsep}{2}
+
+
+\renewcommand{\thesection}{\Roman{section}} 
+% Configuration des styles pour le code Python
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=python}
+%\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+%Conny
+%Bjornstrup
+%\pagestyle{Conny}
+\usepackage[french]{babel}
+%\renewcommand{\footrulewidth}{3pt}
+\makeglossaries
+\title{Document_De_KALDADAK_ADAMA}
+\author{}
+\date{MOIS_ICI 2025}
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[orange!90!orange,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{logoUY1-eps-converted-to-1.pdf}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{RAPPORT D'INVESTIGATION}}}\\
+		\Large{{\textbf{\textit{SUR WANSI GILLES GILDAS}}}}
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+		
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{0.1cm}
+		\normalsize\textbf{Option }:\\			
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			\hspace{0.02cm} \textsl{\textbf{}}\\
+            \hspace{0.02cm} \textsl{\textbf{KALDADAK ADAMA}, 24P824}\\\\
+			
+		\end{tabular}
+	\end{center}
+	
+	\begin{center}
+	\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+	\hspace{0.02cm} \textsl{M. Minka THierry}
+	\end{center}
+	
+    
+	\vspace{4cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+		
+	\vspace{-1.4cm}
+	
+		
+	\vfill%\null
+	
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\section*{INTRODUCTION}
+\addcontentsline{toc}{chapter}{Introduction}
+Le présent travail s’inscrit dans une démarche à la fois pédagogique et pratique, visant à mettre en application les principes fondamentaux de l’investigation numérique. Il consiste à mener une enquête en ligne centrée sur l’identité d’une personne, en exploitant uniquement les informations accessibles publiquement sur Internet et les réseaux sociaux. L’objectif est de démontrer comment les traces numériques laissées volontairement ou involontairement peuvent être analysées pour reconstituer un profil cohérent et significatif. Cette démarche repose sur une approche rigoureuse, méthodique et éthique, respectant les règles de la protection des données personnelles et les limites légales de la recherche en sources ouvertes (OSINT). Elle mobilise différentes techniques d’analyse numérique, telles que la recherche avancée, la vérification des métadonnées, l’étude des profils sociaux, ainsi que le recoupement d’informations issues de plusieurs plateformes. Au-delà de la simple collecte de données, ce travail met en évidence la dimension critique de l’investigation numérique : il s’agit non seulement de trouver des informations, mais aussi d’en évaluer la fiabilité, la pertinence et le contexte de publication. Cette analyse permet de comprendre comment une identité numérique se construit, se renforce ou se fragilise au fil des activités en ligne. Ainsi, cette étude illustre concrètement l’importance de la vigilance numérique et de la cyberresponsabilité dans un monde où chaque action sur Internet laisse une empreinte durable. Elle montre comment les données éparses publiées sur le web peuvent être collectées, croisées et interprétées pour dresser un portrait numérique complet, révélant à la fois les opportunités offertes par la visibilité en ligne et les risques potentiels liés à la surexposition, à la désinformation ou à l’usurpation d’identité dans notre société hyperconnectée.
+
+
+
+\newpage
+
+\section{Contexte : Investigation numérique}  
+À l’ère du numérique, l’identité d’une personne ne se limite plus à ses informations administratives ou à son apparence physique : elle s’étend désormais à son \textbf{empreinte numérique}, c’est-à-dire \textbf{l’ensemble des traces qu’elle laisse sur Internet, Réseaux sociaux, plateformes professionnelles, blogs, commentaires, photos, ou encore métadonnées}. C'est dans cette même logique que \textbf{Heidegger} s'aligne:\textbf{l’être humain ne se définit
+plus seulement par sa présence physique mais également par son existence
+numérique}. 
+
+Chaque interaction contribue à façonner une identité en ligne souvent plus révélatrice que l’identité réelle elle-même. Cette évolution, amplifiée par la rapidité des échanges et la viralité de l’information, rend aujourd’hui indispensable la maîtrise des techniques d’investigation numérique pour comprendre, vérifier et authentifier les profils en ligne.
+
+Dans le cadre de ce travail d’investigation numérique, l’objet est d’établir le profil d’identité en ligne d’une personne en recoupant les informations publiques et semi-privées disponibles sur Internet et les réseaux sociaux. L’objectif est de rassembler, analyser et documenter les éléments pertinents (comptes sociaux, adresses e-mail, numéros, publications, photos, traces géolocalisées, mentions publiques) afin d’aider à vérifier une identité, reconstruire des activités en ligne ou évaluer des risques (usurpation, comportements problématiques).
+
+Cette investigation, réalisée dans un cadre pédagogique, permet de mettre en pratique les notions étudiées en cours d’investigation numérique : recherche OSINT (Open Source Intelligence), collecte de preuves numériques, analyse de métadonnées et respect des principes de confidentialité et de proportionnalité. Elle contribue à illustrer concrètement c\textbf{omment les traces laissées en ligne peuvent révéler une identité}, mais aussi \textbf{comment une mauvaise gestion de celles-ci peut exposer une personne} à des menaces telles que l’usurpation, la diffamation ou la cybercriminalité.
+
+\section{Profil cible}
+\begin{center}
+    {\Large \textbf{Fiche d'identité générale}}\\[0.2cm]
+    \rule{0.8\textwidth}{0.4pt}
+\end{center}
+
+\vspace{0.5cm}
+
+\renewcommand{\arraystretch}{1.4}
+\rowcolors{2}{gray!10}{white}
+
+\begin{tabular}{>{\bfseries}p{7cm}p{10cm}}
+Nom complet : & WANSI GILLES GILDAS \\ 
+Surnoms / pseudonymes : &  GILDAS ASPHAT RICH; GILDAS ASPHAT WANSI\\ 
+Sexe : &  MASCULIN\\ 
+Date de naissance : &   20-01-2003\\ 
+Lieu de naissance : &  MBOUDA\\ 
+Nationalité / origine : &  CAMEROUNAISE\\ 
+Langues parlées : &  FRANCAIS\\ 
+Email : &  alphatwans@gmail.com\\
+Contact : &  672032848\\
+Adresse / lieu de résidence (approx.) : & CRADAT \\ 
+Situation familiale : &  CELIBATAIRE\\ 
+Niveau d’éducation / études suivies : &  Niveau 4 Ingénieur \\ 
+Profession / occupation actuelle : &  Entrepreneur\\ 
+Religion / croyances (facultatif) : &  Chrétien\\ 
+Apparence physique : & Taille moyenne, corpulence  moyenne \\ 
+Particularités / signes distinctifs : &  \\ 
+Documents d’identité connus : & CNI, carte d'étudiant\\ 
+Autres informations générales : &  RAS\\ 
+\end{tabular}
+
+\vspace{1cm}
+
+\begin{flushright}
+    \textit{Dernière mise à jour : \today}
+\end{flushright}
+WANSI Gilles Gildas, également connu sous les pseudonymes Gildas Asphat Rich et Gildas Asphat Wansi, est un homme camerounais né le 20 janvier 2003 à Mbouda. De nationalité camerounaise et de confession chrétienne, il réside actuellement au CRADAT. Célibataire et de langue française, il poursuit un cursus de niveau 4 en cycle d’ingénieur à l'ENSP et exerce parallèlement comme entrepreneur. De taille et de corpulence moyennes, il ne présente pas de signes distinctifs particuliers. Il détient une carte nationale d’identité et une carte d’étudiant. Aucun élément particulier n’a été signalé dans les autres informations générales.
+
+
+\section{Outils d'investigation}
+\begin{center}
+    {\Large \textbf{Outils OSINT pour les personnes}}\\[0.4cm]
+    \rule{0.8\textwidth}{0.4pt}
+\end{center}
+
+\vspace{0.6cm}
+
+\renewcommand{\arraystretch}{1.4}
+\rowcolors{2}{gray!10}{white}
+\begin{tabular}{>{\bfseries}p{4cm}p{6cm}p{6cm}}
+Cible & Outils & Description \\ \hline
+\faEnvelope\ Adresses e-mail & HaveIBeenPwned, Holehe (CLI), Emailrep.io & Vérifie si un e-mail a fuité ou s’il est associé à des comptes \\ 
+\faPhone\ Numéros de téléphone & TrueCaller, Sync.me, NumVerify API & Identifie le propriétaire d’un numéro \\ 
+\faUser\ Pseudonymes / usernames & Sherlock, Maigret, Namechk, Knowem & Recherche un pseudo sur des centaines de sites \\ 
+\faGlobe\ Localisation / géolocalisation & GeoSocial Footprint, Creepy & Analyse la position issue des réseaux sociaux \\ 
+\faImage\ Images / photos & Google Images, Yandex Images, TinEye, ExifTool & Recherche inversée d’images, métadonnées EXIF \\ 
+\end{tabular}
+
+
+\begin{center}
+    {\Large \textbf{Outils OSINT pour les réseaux sociaux}}\\[0.4cm]
+    \rule{0.8\textwidth}{0.4pt}
+\end{center}
+
+\vspace{0.6cm}
+
+\renewcommand{\arraystretch}{1.4}
+\rowcolors{2}{gray!10}{white}
+\begin{tabular}{>{\bfseries}p{3cm}p{6cm}p{7cm}}
+Réseau & Outils OSINT dédiés & Utilisation \\ \hline
+Facebook & Facebook Graph Search (via URL), IntelTechniques & Recherche d’amis, photos, pages, lieux \\ 
+Twitter / X & Twint (CLI), TweetDeck & Extraction de tweets sans API \\ 
+LinkedIn & Linkedin2Username, Phantombuster & Collecte de profils publics \\ 
+Instagram & Instaloader, Inflact & Téléchargement et analyse de posts publics \\ 
+TikTok / YouTube & TikTok Scraper, Social Blade & Statistiques, contenus, tendances \\ 
+\end{tabular}
+
+\section{Méthodologie}
+La méthodologie adoptée pour cette investigation numérique repose sur une approche rigoureuse, progressive et respectueuse des cadres juridique et éthique. Elle vise à collecter, analyser et interpréter des informations accessibles publiquement en ligne afin d’établir le \textbf{profil d’identité numérique} du sujet étudié, \textit{WANSI Gilles Gildas}.  
+Cette démarche suit cinq étapes principales : \textbf{la préparation de l’enquête, la collecte des données, l’analyse, le recoupement des informations et la documentation des résultats.}
+
+\subsection{Préparation de l’enquête}
+Cette première phase a consisté à définir le \textbf{périmètre de l’investigation} et les \textbf{objectifs de recherche}.  
+Elle visait à déterminer :
+\begin{itemize}
+    \item Les informations à rechercher (identité, activités, relations, empreinte numérique, localisation) ;
+    \item Les plateformes prioritaires (réseaux sociaux, moteurs de recherche, bases de données publiques) ;
+    \item Les limites légales et éthiques à respecter (seulement les données accessibles au public).
+\end{itemize}
+
+Un \textbf{profil de base} a été établi à partir des données connues (nom complet, pseudonymes, âge, profession, lieu de résidence, etc.) afin de guider les recherches OSINT.  
+
+\subsection{Collecte des données (Phase OSINT)}
+Cette étape a mobilisé des \textbf{outils d’investigation numérique} permettant d’explorer les différentes facettes de l’identité en ligne du sujet.  
+Les outils ont été sélectionnés selon le type de données recherchées :  
+\begin{itemize}
+    \item \textbf{Adresses e-mail} : HaveIBeenPwned pour vérifier d’éventuelles fuites ou affiliations à des comptes ;
+    \item \textbf{Numéros de téléphone} : TrueCaller pour identifier d’éventuelles correspondances avec des comptes sociaux ;
+    \item \textbf{Pseudonymes et usernames} : Sherlock et Maigret pour rechercher les pseudonymes \textit{Gildas Asphat Rich} et \textit{Gildas Asphat Wansi} sur diverses plateformes ;
+    \item \textbf{Images et photos} : Google Images pour effectuer des recherches inversées;
+    \item \textbf{Réseaux sociaux} :
+    \begin{itemize}
+        \item \textbf{Facebook} : Graph Search et \textbf{IntelTechniques} pour la recherche d’amis, de pages et de publications associées ;
+        \item \textbf{Instagram} : Instaloader pour l’analyse des posts et des stories publics ;
+        \item \textbf{TikTok et YouTube} : Social Blade et TikTok Scraper pour l’étude des contenus, vues et interactions ;
+        \item \textbf{LinkedIn} : Linkedin2Username pour collecter les profils professionnels publics.
+    \end{itemize}
+\end{itemize}
+
+Chaque information trouvée a été sauvegardée sous forme de \textbf{captures d’écran horodatées} et \textbf{exportations de pages web}, accompagnées de l’URL d’origine et du \textbf{hash SHA-256} pour garantir l’intégrité des preuves.
+
+\subsection{Analyse et interprétation des données}
+Les données collectées ont ensuite été \textbf{classées, triées et corrélées} afin de dégager des éléments pertinents.  
+Cette phase a permis de :
+\begin{itemize}
+    \item Identifier les comptes vérifiés comme appartenant réellement au sujet ;
+    \item Distinguer les profils potentiellement falsifiés ou inactifs ;
+    \item Déterminer la fréquence et la nature des activités en ligne (publications, commentaires, abonnements) ;
+    \item Évaluer le niveau d’exposition publique de la personne (données personnelles visibles, photos, géolocalisation).
+\end{itemize}
+
+L’analyse a également porté sur les \textbf{métadonnées} (dates, lieux, appareils utilisés) afin de mieux comprendre le contexte de publication et d’assurer la cohérence chronologique des traces numériques.
+
+\subsection{Recoupement et validation}
+Cette étape a consisté à \textbf{vérifier la fiabilité} des informations obtenues.  
+Les données issues de plusieurs sources ont été \textbf{comparées et croisées} pour confirmer leur authenticité.  
+Par exemple, une photo trouvée sur Facebook a été vérifiée via recherche inversée d’images sur Google et Yandex pour s’assurer qu’elle n’avait pas été réutilisée ailleurs.  
+Seules les informations cohérentes, datées et vérifiables ont été retenues pour le rapport final.  
+
+\subsection{Documentation et présentation des résultats}
+Enfin, l’ensemble des résultats a été compilé dans un \textbf{rapport structuré}, comprenant :
+\begin{itemize}
+    \item Une fiche d’identité numérique synthétique du sujet ;
+    \item Les captures et liens de vérification ;
+    \item Les observations analytiques sur le comportement numérique ;
+    \item Les risques identifiés (usurpation, surexposition, fuites de données).
+\end{itemize}
+
+Chaque élément de preuve est accompagné de sa source et de son horodatage, garantissant la traçabilité et la reproductibilité de l’enquête.  
+Cette documentation permet d’assurer la \textbf{transparence} du processus et la \textbf{recevabilité} des résultats dans un cadre académique ou judiciaire.
+\section{Résultats}
+Les recherches effectuées ont permis d’obtenir plusieurs informations pertinentes sur la présence numérique du sujet, \textbf{WANSI Gilles Gildas}. Ces résultats sont issus exclusivement de sources ouvertes, accessibles publiquement, et ont été vérifiés par recoupement.
+
+\subsection*{Présence en ligne et cohérence du profil}
+Les pseudonymes \textit{Gildas Asphat Rich} et \textit{Gildas Asphat Wansi} apparaissent de manière récurrente sur différentes plateformes sociales, notamment Facebook, Instagram et LinkedIn. Les informations partagées (nom, localisation, photo de profil, domaine d’étude) sont cohérentes entre elles, ce qui renforce l’authenticité du profil.  
+Les publications recensées concernent principalement des sujets liés à la technologie, à la vie estudiantine et à l’entrepreneuriat, ce qui correspond à la profession déclarée du sujet.
+
+\subsection*{Analyse des images et métadonnées}
+Une recherche inversée d’images via Google Images et Yandex a permis de confirmer l’origine et la cohérence de plusieurs photos associées au profil. Les métadonnées EXIF récupérées à l’aide de l’outil \textit{ExifTool} indiquent des prises de vue au Cameroun, corroborant la localisation du sujet au CRADAT.  
+Aucune anomalie ni signe de réutilisation d’images provenant d’autres profils n’a été détectée, ce qui réduit la probabilité d’usurpation d’identité.
+
+\subsection*{Résultats OSINT techniques}
+Les vérifications réalisées sur \textit{HaveIBeenPwned} et \textit{Holehe} n’ont révélé aucune fuite de données associée aux adresses e-mail connues du sujet.  
+Les recherches via \textit{TrueCaller} et \textit{NumVerify} confirment la correspondance des numéros de téléphone avec des comptes authentiques.  
+Les analyses sur \textit{Social Blade} et \textit{TikTok Scraper} n’ont mis en évidence aucun contenu problématique ni activité suspecte sur les plateformes observées.
+
+\subsection*{Risques identifiés}
+Bien que la présence numérique du sujet reste cohérente et modérée, certains risques potentiels ont été relevés :
+\begin{itemize}
+    \item \textbf{Surexposition des données personnelles :} certaines informations (localisation, photos publiques, détails sur la vie privée) sont accessibles sans restriction, exposant le sujet à des risques d’ingénierie sociale ou d’usurpation.
+    \item \textbf{Corrélation inter-profils :} la réutilisation identique des pseudonymes sur plusieurs plateformes facilite la traçabilité et la cartographie numérique du sujet.
+    \item \textbf{Absence de gestion de confidentialité :} les paramètres de visibilité sur certains comptes ne sont pas optimisés, ce qui pourrait compromettre la confidentialité.
+\end{itemize}
+
+\subsection*{Synthèse des résultats}
+En résumé, l’investigation a permis de :
+\begin{itemize}
+    \item Confirmer l’existence d’une identité numérique authentique et cohérente ;
+    \item Identifier les principales plateformes utilisées par le sujet ;
+    \item Évaluer le niveau d’exposition publique et les risques potentiels liés à la visibilité en ligne ;
+    \item Démontrer l’importance de la gestion de la confidentialité et du contrôle des données personnelles.
+\end{itemize}
+
+
+\section{Recommandations}
+Au terme de cette investigation, plusieurs recommandations sont formulées afin d’améliorer la sécurité et la maîtrise de l’identité numérique du sujet étudié :
+
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Renforcer la confidentialité :} paramétrer les comptes sociaux pour limiter l’accès aux informations personnelles (photos, géolocalisation, liste d’amis).
+    \item \textbf{Varier les pseudonymes :} éviter la réutilisation des mêmes identifiants sur plusieurs plateformes afin de réduire la traçabilité.
+    \item \textbf{Surveiller régulièrement sa présence numérique :} effectuer des recherches périodiques sur son nom et ses pseudonymes afin de détecter d’éventuelles usurpations ou fuites.
+    \item \textbf{Utiliser des mots de passe robustes et uniques :} adopter un gestionnaire de mots de passe et activer la double authentification sur les comptes sensibles.
+    \item \textbf{Limiter la diffusion publique d’informations personnelles :} ne publier que des contenus nécessaires et maîtriser leur visibilité.
+    \item \textbf{Sensibiliser à la cyberhygiène :} promouvoir une culture de la vigilance numérique, notamment auprès des étudiants et jeunes professionnels.
+\end{enumerate}
+
+Ces mesures s’inscrivent dans les bonnes pratiques recommandées par les experts en cybersécurité et investigation numérique, notamment par le \textit{Centre for Internet Security (CIS)}, l’\textit{ANSSI} et la \textit{Cybersecurity and Infrastructure Security Agency (CISA)}.
+
+
+
+
+\newpage
+\section*{CONCLUSION}
+\addcontentsline{toc}{chapter}{Conclusion}
+Cette investigation numérique, centrée sur l’analyse de l’identité en ligne de Wansi Gilles Gildas, a permis de démontrer l’efficacité des outils OSINT dans la collecte et la corrélation d’informations publiques. Elle illustre comment les traces laissées sur le web peuvent être analysées de manière rigoureuse pour dresser un profil numérique fiable, tout en respectant les cadres éthique et légal. L’étude révèle que, bien qu’il soit possible de reconstruire une image assez complète d’une personne à partir de données publiques, la frontière entre vie privée et vie numérique reste fragile. Ce travail souligne donc la nécessité d’une vigilance accrue et d’une éducation numérique renforcée, afin de prévenir les risques d’usurpation, de désinformation ou d’exploitation malveillante des données personnelles. En définitive, la maîtrise de son identité numérique apparaît aujourd’hui comme une compétence essentielle dans un monde connecté, où chaque donnée partagée peut devenir un élément d’enquête, mais aussi une potentielle vulnérabilité.
+
+
+\end{document}
