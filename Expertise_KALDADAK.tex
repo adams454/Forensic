@@ -1,0 +1,334 @@
+\documentclass[memoire, 12pt]{report}
+
+% === Encodage & langue ===
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% === Mise en page ===
+\usepackage[top=1.9cm, bottom=1.5cm, left=1.9cm, right=2.1cm]{geometry}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{float}
+\usepackage[bottom]{footmisc}
+\usepackage[section]{placeins}
+
+% === Mathématiques ===
+\usepackage{amsmath, amssymb, amsfonts}
+
+% === Tableaux et mise en forme ===
+\usepackage{array, tabularx, longtable, multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% === Graphiques et dessins ===
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[export]{adjustbox}
+
+% === Références et bibliographie ===
+\usepackage{multibib}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres références}
+\usepackage[babel=true]{csquotes}
+\usepackage{url}
+\usepackage{pdfpages}
+
+% === Algorithmes ===
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+% Si tu préfères algorithm2e, commente les deux lignes ci-dessus et décommente celle-ci :
+\usepackage[ruled,vlined,french,onelanguage]{algorithm2e}
+
+% === Autres utilitaires ===
+\usepackage{lmodern}
+\usepackage{rotating}
+\usepackage{lipsum}
+\usepackage{minted}   % pour le code source coloré
+\usepackage{listings}
+\usepackage[normalem]{ulem} % pour \uline etc.
+\useunder{\uline}{\ul}{}
+
+% === Glossaires ===
+\usepackage{glossaries}
+
+% === Liens hypertextes ===
+\usepackage{hyperref}
+
+
+% Augmente l'espacement vertical entre les entrées
+\setlength{\cftbeforesecskip}{8pt}   % espace avant chaque section
+\setlength{\cftbeforesubsecskip}{4pt} % espace avant chaque sous-section
+% Met en gras les sections principales dans la table des matières
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+
+% Optionnel : augmente l'espacement entre les points de la ligne
+\renewcommand{\cftdotsep}{2}
+
+
+\renewcommand{\thesection}{\Roman{section}} 
+% Configuration des styles pour le code Python
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=python}
+%\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+%Conny
+%Bjornstrup
+%\pagestyle{Conny}
+\usepackage[french]{babel}
+%\renewcommand{\footrulewidth}{3pt}
+\makeglossaries
+\title{Document_De_KALDADAK_ADAMA}
+\author{}
+\date{MOIS_ICI 2025}
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[orange!90!orange,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{logoUY1-eps-converted-to-1.pdf}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{EXPERTISE}}}\\
+		\Large{{\textbf{\textit{SUR ORDONNANCE DU RENVOI}}}}
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+		
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{0.1cm}
+		\normalsize\textbf{Option }:\\			
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			\hspace{0.02cm} \textsl{\textbf{}}\\
+            \hspace{0.02cm} \textsl{\textbf{KALDADAK ADAMA}, 24P824}\\\\
+			
+		\end{tabular}
+	\end{center}
+	
+	\begin{center}
+	\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+	\hspace{0.02cm} \textsl{M. Minka THierry}
+	\end{center}
+	
+    
+	\vspace{4cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+		
+	\vspace{-1.4cm}
+	
+		
+	\vfill%\null
+	
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\section*{INTRODUCTION}
+\addcontentsline{toc}{chapter}{Introduction}
+L’affaire \textbf{du jurnaliste} constitue l’un des dossiers judiciaires les plus marquants de ces dernières années au Cameroun, tant par sa portée médiatique que par la gravité des faits révélés. Journaliste d’investigation reconnu, il était connu pour ses enquêtes sensibles mettant en cause des personnalités publiques et économiques de premier plan. Son enlèvement, suivi de la découverte macabre de son corps, a déclenché une vaste enquête judiciaire mobilisant plusieurs unités spécialisées de la police, de la gendarmerie et des experts en investigation numérique.
+
+Dans le cadre de cette procédure, l’expertise numérique a joué un rôle déterminant pour \textbf{reconstituer les faits, établir les communications entre les suspects et la victime}, et \textbf{documenter les déplacements, échanges téléphoniques et interactions numériques} précédant et suivant le crime. 
+
+Le présent travail s’inscrit dans une approche académique d’analyse de cette expertise. Il vise à \textbf{identifier les outils utilisés par les experts judiciaires} dans la collecte et l’exploitation des preuves numériques, à \textbf{comprendre leur apport dans l’élucidation de l’affaire}, et à \textbf{expliquer les fondements techniques et juridiques ayant conduit le juge d’instruction à l’ordonnance de renvoi} devant la juridiction compétente.
+
+\newpage
+
+\vspace{0.5cm}
+
+\section{Contexte de l’enquête judiciaire}
+
+L’enquête sur l’assassinat du journaliste a été ouverte à la suite de la découverte de son corps sans vie dans la périphérie de Yaoundé. Dès les premières heures, les autorités judiciaires ont privilégié la piste d’un \textbf{enlèvement planifié}, impliquant plusieurs acteurs \textbf{(soit  17 acteurs)}.
+
+Les investigations ont mobilisé des spécialistes de la \textbf{police judiciaire} et des \textbf{experts en criminalistique numérique} pour analyser :
+\begin{itemize}
+    \item les relevés téléphoniques (communications, SMS, géolocalisations, bornages) ;
+    \item les images issues de la vidéosurveillance sur les itinéraires de la victime ;
+    \item les données extraites des réseaux sociaux et appareils électroniques saisis ;
+    \item les traces GPS provenant des véhicules impliqués ;
+    \item et les interconnexions téléphoniques entre suspects.
+\end{itemize}
+
+Grâce à la coopération entre les opérateurs de télécommunication et les services d’investigation, il a été possible de \textbf{recouper les données de localisation avec les témoignages} recueillis lors des auditions. Ces analyses ont permis de \textbf{situer certains suspects sur les lieux critiques} et de démontrer des \textbf{communications répétées entre les protagonistes avant et après la disparition} du journaliste.
+
+Ce faisceau d’indices matériels et numériques a conduit le juge d’instruction à \textbf{retenir des charges suffisantes} à l’encontre de plusieurs mis en cause, motivant ainsi l’ordonnance de renvoi. Pour en arrivé a ce niveau, des experts ont utilisé des outils que nous allons présenter.
+
+\vspace{0.5cm}
+
+\section{Outils et méthodes utilisés par l’expert judiciaire}
+
+L’expertise numérique dans cette affaire s’est appuyée sur un ensemble d’outils techniques regroupés en plusieurs catégories, permettant la collecte, l’analyse et la corrélation des preuves numériques.
+
+\subsection*{1. Outils de téléphonie et de traçage géographique}
+\begin{itemize}
+    \item \textbf{Cell ID Mapping} : exploitation des données de bornage pour retracer les déplacements des téléphones.
+    \item \textbf{Call Detail Records (CDR)} : analyse des appels, SMS et connexions data entre suspects et victime.
+    \item \textbf{SIM Card Forensics} : extraction des informations contenues sur les cartes SIM (contacts, messages, logs).
+    \item \textbf{GPS Forensics} : analyse des historiques de localisation des appareils mobiles.
+\end{itemize}
+
+\subsection*{2. Outils de criminalistique mobile}
+\begin{itemize}
+    \item \textbf{Cellebrite UFED} : extraction et analyse de données sur téléphones saisis (messages, médias, réseaux sociaux).
+    \item \textbf{Magnet AXIOM / MOBILedit Forensics} : croisement des données issues de plusieurs terminaux.
+    \item \textbf{XRY (MSAB)} : récupération de données supprimées sur Android et iOS.
+\end{itemize}
+
+\subsection*{3. Outils de corrélation et d’analyse de réseau}
+\begin{itemize}
+    \item \textbf{Maltego} et \textbf{i2 Analyst’s Notebook} : cartographie des relations téléphoniques, sociales et géographiques.
+    \item \textbf{Gephi} : représentation graphique des connexions entre individus et appareils.
+\end{itemize}
+
+\subsection*{4. Outils de preuve numérique et de traçabilité}
+\begin{itemize}
+    \item \textbf{Hashing (MD5, SHA-256)} : garantie d’intégrité des preuves numériques.
+    \item \textbf{Timeline Analysis} : reconstitution chronologique des événements numériques.
+    \item \textbf{Forensic Imaging} : duplication légale des supports analysés sans altération des données.
+\end{itemize}
+
+\subsection*{5. Outils de communication et surveillance légale}
+\begin{itemize}
+    \item \textbf{Requêtes judiciaires aux opérateurs télécoms} : obtention des historiques de communication.
+    \item \textbf{Analyse des logs Internet et IP} : traçage des connexions suspectes et identification des appareils.
+    \item \textbf{Les vidéos surveillances} : ont permis de confirmer la présence physique.
+\end{itemize}
+
+\vspace{0.5cm}
+
+\section{Analyse et fondement du renvoi}
+
+Les résultats issus de cette expertise ont permis d’établir plusieurs éléments concordants :
+\begin{itemize}
+    \item \textbf{La présence confirmée de plusieurs suspects dans la zone où la victime a été enlevée.}
+    \item \textbf{La corrélation temporelle entre les communications téléphoniques et les déplacements observés.}
+    \item \textbf{La mise en évidence de contacts directs entre certains protagonistes avant et après les faits.}
+\end{itemize}
+
+Ces éléments techniques, corroborés par les témoignages, ont constitué un faisceau d’indices graves, précis et concordants. Le juge d’instruction, sur la base de ces preuves numériques, a estimé que les conditions étaient réunies pour rendre une \textbf{ordonnance de renvoi} devant la juridiction de jugement, afin que les personnes mises en cause répondent des faits de complicité, de non-assistance et d’entrave à la justice.
+
+
+
+
+\newpage
+\section*{CONCLUSION}
+\addcontentsline{toc}{chapter}{Conclusion}
+L’affaire qui fait l'objet d'ordonnance de renvoi illustre l’importance croissante de l’expertise numérique dans les enquêtes judiciaires modernes. Grâce à la combinaison d’outils spécialisés tels que \textit{Cellebrite UFED}, \textit{Maltego} ou les analyses CDR les enquêteurs ont pu reconstituer les faits avec une précision scientifique.  
+
+Cette affaire démontre que l’exploitation des traces numériques constitue aujourd’hui un levier essentiel pour la manifestation de la vérité, mais exige une approche rigoureuse et conforme au droit.  
+L’ordonnance de renvoi du juge d’instruction résulte donc d’une méthodologie fondée sur la corrélation entre données techniques, preuves matérielles et éléments de contexte, garantissant la solidité du dossier judiciaire.
+
+\vspace{0.5cm}
+
+
+
+
+\end{document}
