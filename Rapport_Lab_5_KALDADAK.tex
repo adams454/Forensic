@@ -1,0 +1,556 @@
+\documentclass[memoire, 12pt]{report}
+
+% === Encodage & langue ===
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% === Mise en page ===
+\usepackage[top=1.9cm, bottom=1.5cm, left=1.9cm, right=2.1cm]{geometry}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{float}
+\usepackage[bottom]{footmisc}
+\usepackage[section]{placeins}
+
+% === Mathématiques ===
+\usepackage{amsmath, amssymb, amsfonts}
+
+% === Tableaux et mise en forme ===
+\usepackage{array, tabularx, longtable, multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% === Graphiques et dessins ===
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[export]{adjustbox}
+
+% === Références et bibliographie ===
+\usepackage{multibib}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres références}
+\usepackage[babel=true]{csquotes}
+\usepackage{url}
+\usepackage{pdfpages}
+
+% === Algorithmes ===
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+% Si tu préfères algorithm2e, commente les deux lignes ci-dessus et décommente celle-ci :
+\usepackage[ruled,vlined,french,onelanguage]{algorithm2e}
+
+% === Autres utilitaires ===
+\usepackage{lmodern}
+\usepackage{rotating}
+\usepackage{lipsum}
+\usepackage{minted}   % pour le code source coloré
+\usepackage{listings}
+\usepackage[normalem]{ulem} % pour \uline etc.
+\useunder{\uline}{\ul}{}
+
+% === Glossaires ===
+\usepackage{glossaries}
+
+% === Liens hypertextes ===
+\usepackage{hyperref}
+
+
+% Augmente l'espacement vertical entre les entrées
+\setlength{\cftbeforesecskip}{8pt}   % espace avant chaque section
+\setlength{\cftbeforesubsecskip}{4pt} % espace avant chaque sous-section
+% Met en gras les sections principales dans la table des matières
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+
+% Optionnel : augmente l'espacement entre les points de la ligne
+\renewcommand{\cftdotsep}{2}
+
+
+\renewcommand{\thesection}{\Roman{section}} 
+% Configuration des styles pour le code Python
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+% Définition d'un style pour les commandes réseau
+\lstdefinestyle{cisco}{
+  backgroundcolor=\color{gray!10},
+  basicstyle=\ttfamily\small,
+  frame=single,
+  rulecolor=\color{black},
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  xleftmargin=1em,
+  framexleftmargin=1em
+}
+
+\lstset{style=python}
+%\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+%Conny
+%Bjornstrup
+%\pagestyle{Conny}
+\usepackage[french]{babel}
+%\renewcommand{\footrulewidth}{3pt}
+\makeglossaries
+\title{Document_De_KALDADAK_ADAMA}
+\author{}
+\date{MOIS_ICI 2025}
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[orange!90!orange,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{logoUY1-eps-converted-to-1.pdf}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{LAB 1}}}\\
+		\Large{{\textbf{\textit{Configuration d'un Environnement Réseau Fonctionnel et Sécurisé}}}}
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+		
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{0.1cm}
+		\normalsize\textbf{Option }:\\			
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			\hspace{0.02cm} \textsl{\textbf{}}\\
+            \hspace{0.02cm} \textsl{\textbf{KALDADAK ADAMA}, 24P824}\\\\
+			
+		\end{tabular}
+	\end{center}
+	
+	\begin{center}
+	\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+	\hspace{0.02cm} \textsl{M. Minka THierry}
+	\end{center}
+	
+    
+	\vspace{4cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+		
+	\vspace{-1.4cm}
+	
+		
+	\vfill%\null
+	
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\section*{INTRODUCTION}
+\addcontentsline{toc}{chapter}{Introduction}
+La configuration d’un pare-feu constitue une étape essentielle dans la sécurisation et la gestion du trafic réseau d’une infrastructure informatique. Dans le cadre de ce travail, il s’agit de mettre en place et de configurer un pare-feu FortiGate afin d’assurer la communication et la protection entre plusieurs réseaux interconnectés.
+L’objectif principal est de définir les interfaces réseau, d’ajouter les routes statiques nécessaires à la connectivité entre les sous-réseaux, puis de créer des services spécifiques permettant le bon fonctionnement des applications, notamment celles utilisant le port TCP 8000 et le protocole ICMP.
+Enfin, des politiques de filtrage sont établies pour autoriser la communication entre les différentes interfaces (ports 1, 2 et 3) du pare-feu, garantissant ainsi à la fois la connectivité et la sécurité du réseau.
+
+\newpage
+
+\vspace{0.5cm}
+
+\section{Architecture du réseau}
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.9\textwidth]{Capture d'écran 2025-10-21 101638.png}
+    \caption{Schéma du réseau utilisé pour les tests}
+    \label{fig:reseau}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \caption{Inventaire des équipements réseau}
+  \label{tab:equipements}
+  \renewcommand{\arraystretch}{1.3} % aère un peu les lignes
+  \begin{tabular}{|p{4cm}|p{2.8cm}|p{2.2cm}|p{3cm}|p{3.5cm}|}
+    \hline
+    \textbf{Équipements} & \textbf{Adresses} & \textbf{Ports} & \textbf{Masques} & \textbf{Passerelles} \\
+    \hline
+    Svr\_ubuntu\_1 (pwd : Svr\_Ubuntu\_1) & 192.168.5.2 & / & 255.255.255.0 & 192.168.5.1 (FW1) \\ \hline
+    Windows\_Client1 & 192.168.1.6 & / & 255.255.255.0 & 192.168.1.7 (FW1) \\ \hline
+    Windows\_Client2 & 172.126.3.3 & / & 255.255.255.0 & 172.126.3.4 (R1) \\ \hline
+    Kali\_Linux (pwd : kali) & 172.126.4.4 & / & 255.255.255.0 & 172.126.4.5 (R1) \\ \hline
+
+    \multirow{3}{*}{FortiGate (pwd : root)} 
+     & 192.168.2.7 & Port1 & 255.255.255.0 & / \\ 
+     & 192.165.1.7 & Port2 &  &  \\ 
+     & 192.168.5.1 & Port3 &  &  \\ \hline
+
+    \multirow{3}{*}{R1 (Routeur)} 
+     & 192.168.2.8 & E0/0 & 255.255.255.0 & / \\ 
+     & 172.126.4.5 & E0/1 &  &  \\ 
+     & 172.126.3.4 & E0/3 &  &  \\ \hline
+  \end{tabular}
+\end{table}
+
+
+\section{Configuration du routeur R1}
+La première étape consiste à configurer les interfaces réseaux.  
+Il vous suffit d’entrer ces commandes :
+
+\begin{lstlisting}[style=cisco, caption={Configuration des interfaces du routeur R1}]
+enable
+configure terminal
+
+interface e0/0
+ip address 192.168.2.8 255.255.255.0
+no shutdown  
+
+interface e0/1
+ip address 172.126.4.5 255.255.255.0
+no shutdown
+
+interface e0/2
+ip address 172.126.3.4 255.255.255.0
+no shutdown
+
+do copy running-config startup-config
+end
+\end{lstlisting}
+
+\section*{Ajout des routes statiques}
+
+Par la suite, nous procédons à l’ajout des routes statiques :
+
+\begin{lstlisting}[style=cisco, caption={Configuration des routes statiques}]
+conf t
+ip route 192.168.1.0 255.255.255.0 192.168.2.7
+ip route 192.168.5.0 255.255.255.0 192.168.2.7
+ip route 172.126.3.0 255.255.255.0 172.126.4.0
+ip route 172.126.3.0 255.255.255.0 192.168.1.0
+ip route 172.126.3.0 255.255.255.0 192.168.2.0
+ip route 172.126.4.0 255.255.255.0 172.126.3.0
+ip route 192.158.1.0 255.255.255.0 172.126.4.0
+ip route 192.168.1.0 255.255.255.0 192.168.2.7
+ip route 192.168.2.0 255.255.255.0 172.126.3.0
+ip route 192.168.2.0 255.255.255.0 172.126.4.0
+ip route 192.168.5.0 255.255.255.0 192.168.2.7
+ip route 192.168.5.0 255.255.255.0 172.126.4.0
+
+do copy running-config startup-config
+end
+\end{lstlisting}
+
+
+\section{Configuration du pare-feu}
+
+Suivre les commandes ci-dessous pour la configuration du pare-feu FortiGate.
+
+\subsection*{1. Configuration des interfaces du pare-feu}
+
+\begin{lstlisting}[style=fortigate, caption={Configuration des interfaces du pare-feu}]
+config system interface
+    edit "port1"
+        set mode static
+        set ip 192.168.2.7 255.255.255.0
+        set allowaccess ping https http ssh
+    next
+    edit "port2"
+        set mode static
+        set ip 192.168.1.7 255.255.255.0
+        set allowaccess ping https http ssh
+    next
+    edit "port3"
+        set mode static
+        set ip 192.168.5.1 255.255.255.0
+        set allowaccess ping https http ssh
+    next
+end
+\end{lstlisting}
+
+\subsection*{2. Configuration des routes statiques}
+
+\begin{lstlisting}[style=fortigate, caption={Configuration des routes statiques}]
+config router static
+    edit 1
+        set dst 0.0.0.0 0.0.0.0
+        set gateway 192.168.2.8
+        set device port1
+    next
+config router static
+    edit 1   
+        set dst 172.126.3.0 255.255.255.0
+        set gateway 192.168.2.8
+        set device "port1"
+    next
+    edit 2   
+        set dst 172.126.4.0 255.255.255.0
+        set gateway 192.168.2.8
+        set device "port1"
+    next
+    edit 3   
+        set dst 192.168.1.0 255.255.255.0
+        set gateway 192.168.2.8
+        set device "port2"
+    next
+    edit 4   
+        set dst 192.168.5.0 255.255.255.0
+        set gateway 192.168.2.8
+        set device "port3"
+    next
+end
+\end{lstlisting}
+
+\subsection*{3. Création des services TCP 8000 et ICMP}
+
+Afin que l’application puisse fonctionner correctement sur les autres machines, il est important de créer un service pour le port TCP 8000.
+
+\begin{lstlisting}[style=fortigate, caption={Création des services ICMP et TCP 8000}]
+config firewall service custom
+    edit "ICMP_ALL"
+        set protocol ICMP
+    next
+end
+
+config firewall service custom
+    edit "TCP_8000"
+        set protocol TCP
+        set tcp-portrange 8000
+    next
+end
+\end{lstlisting}
+
+\subsection*{4. Communication entre les ports}
+
+\begin{lstlisting}[style=fortigate, caption={Politiques de communication entre les ports}]
+config firewall policy
+    edit 1
+        set name "Port1 to Port2"
+        set srcintf "port1"
+        set dstintf "port2"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set schedule "always"
+        set service "ICMP_ALL"
+        set service "TCP_8000"
+        set logtraffic all
+    next
+
+    edit 2
+        set name "Port2 to Port1"
+        set srcintf "port2"
+        set dstintf "port1"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set schedule "always"
+        set service "ICMP_ALL"
+        set service "TCP_8000"
+        set logtraffic all
+    next
+
+    edit 3
+        set name "Port1 to Port3"
+        set srcintf "port1"
+        set dstintf "port3"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set schedule "always"
+        set service "ICMP_ALL"
+        set service "TCP_8000"
+        set logtraffic all
+    next
+
+    edit 4
+        set name "Port3 to Port1"
+        set srcintf "port3"
+        set dstintf "port1"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set schedule "always"
+        set service "ICMP_ALL"
+        set service "TCP_8000"
+        set logtraffic all
+    next
+
+    edit 5
+        set name "Port2 to Port3"
+        set srcintf "port2"
+        set dstintf "port3"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set schedule "always"
+        set service "ICMP_ALL"
+        set service "TCP_8000"
+        set logtraffic all
+    next
+
+    edit 6
+        set name "Port3 to Port2"
+        set srcintf "port3"
+        set dstintf "port2"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set schedule "always"
+        set service "ICMP_ALL"
+        set service "TCP_8000"
+        set logtraffic all
+    next
+
+    edit 9
+        set name "Allow Ping"
+        set srcintf "any"
+        set dstintf "any"
+        set srcaddr "all"
+        set dstaddr "all"
+        set action accept
+        set service "PING"
+        set schedule "always"
+    next
+end
+\end{lstlisting}
+
+\bigskip
+Une fois toutes ces configurations effectuées, vous pouvez procéder aux tests de \textbf{ping} et lancer l’application sur les autres machines.
+
+\section{Résulat}
+Dans l'image ci-dessous, nous montrons comment l'application fonctionnent sur le Serveur IUbuntu.
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.9\textwidth]{Capture d'écran 2025-10-21 104742.png}
+    \caption{Résultat des tests de fonctionnement du réseau: Serveur Ubuntu}
+    \label{fig:reseau}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.9\textwidth]{Capture d'écran 2025-11-14 173921.png}
+    \caption{Résultat des tests de fonctionnement du réseau: Client Windows}
+    \label{fig:reseau}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.9\textwidth]{Capture d'écran 2025-11-14 175733.png}
+    \caption{Résultat des tests de fonctionnement du réseau: Kali linux}
+    \label{fig:reseau}
+\end{figure}
+
+
+\newpage
+\section*{CONCLUSION}
+\addcontentsline{toc}{chapter}{Conclusion}
+En somme, la configuration effectuée sur le pare-feu FortiGate permet d’assurer une communication fluide et sécurisée entre les différents segments du réseau. Les interfaces ont été correctement paramétrées, les routes statiques définies, et les services nécessaires créés pour permettre le fonctionnement optimal des applications.
+Grâce aux politiques de sécurité mises en place, les échanges entre les réseaux sont désormais contrôlés et protégés, tout en maintenant la disponibilité des services essentiels tels que le ping et le port TCP 8000.
+Cette configuration illustre l’importance d’une bonne gestion du pare-feu dans la maîtrise du trafic réseau et la protection de l’infrastructure contre les risques liés aux communications non autorisées.
+
+\vspace{0.5cm}
+
+
+
+
+\end{document}
