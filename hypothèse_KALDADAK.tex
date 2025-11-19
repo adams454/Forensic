@@ -1,0 +1,272 @@
+\documentclass[memoire, 12pt]{report}
+
+% === Encodage & langue ===
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% === Mise en page ===
+\usepackage[top=1.9cm, bottom=1.5cm, left=1.9cm, right=2.1cm]{geometry}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{float}
+\usepackage[bottom]{footmisc}
+\usepackage[section]{placeins}
+
+% === Mathématiques ===
+\usepackage{amsmath, amssymb, amsfonts}
+
+% === Tableaux et mise en forme ===
+\usepackage{array, tabularx, longtable, multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% === Graphiques et dessins ===
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[export]{adjustbox}
+
+% === Références et bibliographie ===
+\usepackage{multibib}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres références}
+\usepackage[babel=true]{csquotes}
+\usepackage{url}
+\usepackage{pdfpages}
+
+% === Algorithmes ===
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+% Si tu préfères algorithm2e, commente les deux lignes ci-dessus et décommente celle-ci :
+\usepackage[ruled,vlined,french,onelanguage]{algorithm2e}
+
+% === Autres utilitaires ===
+\usepackage{lmodern}
+\usepackage{rotating}
+\usepackage{lipsum}
+\usepackage{minted}   % pour le code source coloré
+\usepackage{listings}
+\usepackage[normalem]{ulem} % pour \uline etc.
+\useunder{\uline}{\ul}{}
+
+% === Glossaires ===
+\usepackage{glossaries}
+
+% === Liens hypertextes ===
+\usepackage{hyperref}
+
+
+% Augmente l'espacement vertical entre les entrées
+\setlength{\cftbeforesecskip}{8pt}   % espace avant chaque section
+\setlength{\cftbeforesubsecskip}{4pt} % espace avant chaque sous-section
+% Met en gras les sections principales dans la table des matières
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+
+% Optionnel : augmente l'espacement entre les points de la ligne
+\renewcommand{\cftdotsep}{2}
+
+
+\renewcommand{\thesection}{\Roman{section}} 
+% Configuration des styles pour le code Python
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=python}
+%\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+%Conny
+%Bjornstrup
+%\pagestyle{Conny}
+\usepackage[french]{babel}
+%\renewcommand{\footrulewidth}{3pt}
+\makeglossaries
+\title{Document_De_KALDADAK_ADAMA}
+\author{}
+\date{MOIS_ICI 2025}
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[orange!90!orange,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{logoUY1-eps-converted-to-1.pdf}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{}}}\\
+		\Large{{\textbf{\textit{3 HYPOTHESE DE MEURTRE}}}}
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+		
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{0.1cm}
+		\normalsize\textbf{Option }:\\			
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			\hspace{0.02cm} \textsl{\textbf{}}\\
+            \hspace{0.02cm} \textsl{\textbf{KALDADAK ADAMA}, 24P824}\\\\
+			
+		\end{tabular}
+	\end{center}
+	
+	\begin{center}
+	\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+	\hspace{0.02cm} \textsl{M. Minka THierry}
+	\end{center}
+	
+    
+	\vspace{4cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+		
+	\vspace{-1.4cm}
+	
+		
+	\vfill%\null
+	
+\end{titlepage}
+
+
+\section*{Hypothèse 1:Assassinat commandité avec préméditation (mobile : atteinte aux intérêts d’un groupe puissant)}
+
+Cette hypothèse considère que :
+\begin{itemize}
+    \item un commanditaire (ou un groupe) a décidé délibérément d’éliminer Martinez Zogo ;
+    \item un commando organisé a été envoyé pour exécuter l’opération ;
+    \item les actes de torture visaient à envoyer un message d’intimidation ;
+    \item la logistique (véhicules, coordination téléphonique, déplacement du corps) indique un plan préparé à l’avance.
+\end{itemize}
+
+
+\section*{Hypothèse 2: une opération d'intimidation qui tourne mal}
+
+Ici, la mort n’était pas le but initial :
+\begin{itemize}
+    \item le commando avait pour objectif d’intimider, « corriger », ou extorquer des informations ;
+    \item les actes de violence étaient destinés à faire pression, non à tuer ;
+    \item la mort résulte d’un excès de violence, d’une mauvaise évaluation des risques physiologiques, ou d’un dérapage interne ;
+    \item certains acteurs pourraient ne pas avoir été informés d’un projet homicide.
+\end{itemize}
+
+
+\section*{Hypothèse 3: Exécution interne au sein d’un réseau (règlement de comptes interne)}
+
+Cette hypothèse se base sur une autre dynamique criminelle :
+\begin{itemize}
+    \item Martinez Zogo aurait été en contact avec plusieurs sources internes ;
+    \item certaines personnes impliquées pouvaient considérer qu’il détenait des informations compromettantes ;
+    \item l’opération ne viserait pas à défendre des intérêts extérieurs, mais à régler un conflit interne à un groupe ou une institution ;
+    \item la violence extrême serait utilisée pour empêcher la fuite d’informations et éliminer un risque interne.
+\end{itemize}
+
+
+\vspace{0.5cm}
+
+
+
+
+\end{document}
